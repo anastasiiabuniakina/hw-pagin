@@ -16,9 +16,11 @@ function onFormSubmit(event){
     const searchQuery = event.currentTarget.elements.query.value;
     searchImg(searchQuery).then((hits)=>{createMarkup(hits)})
 }
-// // btn.addEventListener('click', onBtnClick)
+
  function createMarkup(hits) {  
     const markup = hits.map(({previewURL})=> ` <li><img src="${previewURL}" alt=""></li>` ).join( " ")
     console.log(markup)
      list.insertAdjacentHTML('beforeend', markup)  
 }
+
+btn.addEventListener('click', onBtnClick)
